@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <MobileNav />
-      <main className="min-h-screen pt-14 sm:pt-16 md:pt-16 lg:pt-20">
+      <main className="min-h-screen pt-4 sm:pt-6 md:pt-6 lg:pt-8">
         <div id="home">
           <Hero />
         </div>

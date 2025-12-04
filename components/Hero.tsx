@@ -34,14 +34,14 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] bg-primary flex items-center overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-4 lg:py-6">
         <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%] gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Hero Image - Top on mobile, right on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="w-full lg:col-start-2 lg:row-start-1 order-1 lg:order-2"
+            className="w-full lg:col-start-2 lg:row-start-1 order-2"
           >
             <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
               <Image
@@ -56,7 +56,7 @@ export function Hero() {
           </motion.div>
 
           {/* Content */}
-          <div className="space-y-4 sm:space-y-6 md:space-y-8 text-white lg:col-start-1 lg:row-start-1 order-2 lg:order-1 w-full">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 text-white lg:col-start-1 lg:row-start-1 order-1 w-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
