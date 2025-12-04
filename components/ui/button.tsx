@@ -27,7 +27,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variantClasses[variant],
           className
         )}
-        ref={ref}
+        ref={ref as any}
         {...props}
       />
     )
