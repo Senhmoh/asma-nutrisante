@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { stylizeAmpersands } from "@/lib/typography";
 
 export function Hero() {
   const titleWords = "Votre santé n'est pas un hasard, c'est une science.".split(" ");
@@ -32,23 +33,42 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen bg-primary flex items-center overflow-hidden">
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center">
+    <section className="relative min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] bg-primary flex items-center overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+        <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%] gap-6 sm:gap-8 lg:gap-12 items-center">
+          {/* Hero Image - Top on mobile, right on desktop */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="w-full lg:col-start-2 lg:row-start-1 order-1 lg:order-2"
+          >
+            <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/Nutrition.jpg"
+                alt="Asma Nutrisanté - Expert en nutrition"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+              />
+            </div>
+          </motion.div>
+
           {/* Content */}
-          <div className="space-y-8 text-white">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 text-white lg:col-start-1 lg:row-start-1 order-2 lg:order-1 w-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-sm font-medium">
-                Biochimiste & Nutritionniste Fonctionnelle
+              <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-xs sm:text-sm font-medium">
+                {stylizeAmpersands("Biochimiste & nutritionniste fonctionnelle")}
               </span>
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif leading-tight"
               variants={container}
               initial="hidden"
               animate="visible"
@@ -68,11 +88,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-lg md:text-xl text-secondary leading-relaxed max-w-2xl"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary leading-relaxed max-w-2xl"
             >
-              De la R&D pharmaceutique à la nutrisanté. J'accompagne vos combats
-              (oncologie, auto-immunité, fatigue) avec une expertise aseptique et
-              une vision holistique.
+              {stylizeAmpersands(
+                "De la R&D pharmaceutique à la nutrisanté. J'accompagne vos combats (oncologie, auto-immunité, fatigue) avec une expertise aseptique et une vision holistique."
+              )}
             </motion.p>
 
             <motion.div
@@ -82,31 +102,13 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="group bg-accent text-white px-8 py-4 rounded-lg text-lg font-medium inline-flex items-center gap-3 hover:scale-105 transition-transform duration-300 shadow-xl hover:shadow-2xl"
+                className="group bg-accent text-white px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-medium inline-flex items-center justify-center gap-2 sm:gap-3 hover:scale-105 transition-transform duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto"
               >
-                Réserver ma consultation (BXL/Visio)
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="truncate">Réserver ma consultation</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
           </div>
-
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="hidden lg:block"
-          >
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/Nutrition.jpg"
-                alt="Asma Nutrisanté - Expert en nutrition"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
 

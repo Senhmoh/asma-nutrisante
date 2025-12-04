@@ -4,25 +4,25 @@ import { motion } from "framer-motion";
 
 export function CTASection() {
   return (
-    <section className="py-16 lg:py-24 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-5xl mx-auto px-3 sm:px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-5xl mx-auto"
+          className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-serif mb-6 text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-3 sm:mb-4 md:mb-6 text-primary">
             Prêt(e) à reprendre votre santé en main ?
           </h2>
-          <p className="text-xl text-primary/70 mb-12 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-primary/70 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto">
             Réservez votre consultation personnalisée et découvrez comment la science
             nutritionnelle peut transformer votre quotidien.
           </p>
@@ -33,7 +33,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-surface rounded-xl shadow-2xl overflow-hidden border border-primary/10"
+            className="bg-surface rounded-lg sm:rounded-xl shadow-2xl overflow-hidden border border-primary/10"
           >
             <div
               className="calendly-inline-widget"

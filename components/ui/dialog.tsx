@@ -42,10 +42,11 @@ const DialogContent = React.forwardRef<
         className
       )}
       {...props}
+      suppressHydrationWarning
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-white min-w-[44px] min-h-[44px] flex items-center justify-center z-10">
-        <X className="h-6 w-6" />
+      <DialogPrimitive.Close className="absolute right-3 top-3 rounded-full bg-primary text-white shadow-lg ring-offset-white transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:pointer-events-none min-w-[44px] min-h-[44px] flex items-center justify-center z-10">
+        <X className="h-5 w-5" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

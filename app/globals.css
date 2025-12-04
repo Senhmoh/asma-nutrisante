@@ -14,12 +14,24 @@
     --surface: #ffffff;
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
-    @apply bg-background font-sans text-primary antialiased;
+    @apply bg-background font-sans text-primary antialiased overflow-x-hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+
+  .ampersand {
+    font-family: var(--font-ampersand), inherit;
+    font-style: italic;
+    letter-spacing: -0.05em;
+    display: inline-block;
   }
 }
 
